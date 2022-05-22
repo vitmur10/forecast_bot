@@ -27,10 +27,7 @@ def prognoz(message):
 				temp = w.temperature('celsius')['temp']
 				temp_max = w.temperature('celsius')['temp_max']
 				temp_min = w.temperature('celsius')['temp_min']
-				answre = 'У ' + city + ' у даний момент ' + w.detailed_status + '\n'
-				answre += 'Температура зараз ' + str(temp) + '°С\n' \
-				'' + 'Макс. ' + str(temp_max) + '°С\n' \
-				'Мін. ' + str(temp_min) + '°С' + '\n'
+				answre = f"""У {city} у даний момент {w.detailed_status}\nТемпература зараз {round(temp)}°С\nМакс.{round(temp_max)}°С\nМін.{round(temp_min)}°С"""
 				bot.send_message(message.chat.id, answre)
 				bot.register_next_step_handler(message, prognoz)
 			except:
@@ -46,10 +43,7 @@ def prognoz(message):
 				temp = w.temperature('celsius')['temp']
 				temp_max = w.temperature('celsius')['temp_max']
 				temp_min = w.temperature('celsius')['temp_min']
-				answre = 'У ' + city + ' у даний момент ' + w.detailed_status + '\n'
-				answre += 'Температура зараз ' + str(temp) + '°С\n' \
-				'' + 'Макс. ' + str(temp_max) + '°С\n' \
-				'Мін. ' + str(temp_min) + '°С' + '\n'
+				answre = f"""У {city} у даний момент {w.detailed_status}\nТемпература зараз {round(temp)}°С\nМакс.{round(temp_max)}°С\nМін.{round(temp_min)}°С"""
 				bot.send_message(message.chat.id, answre)
 				bot.register_next_step_handler(message, prognoz)
 			except:
